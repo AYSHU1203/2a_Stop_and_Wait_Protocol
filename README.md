@@ -12,8 +12,9 @@ To write a python program to perform stop and wait protocol
 ```
  
 import socket 
-s=socket.socket() 
-s.listen(5) 
+s=socket.socket()
+s.bind(('localhost',8000))
+s.listen(5)
 c,addr=s.accept() 
 while True: 
     i=input("Enter a data: ") 
@@ -34,8 +35,7 @@ s.connect(('localhost',8000))
 while True: 
     print(s.recv(1024).decode()) 
     s.send("Acknowledgement Recived".encode()) 
-6. Stop the program
- s.bind(('localhost',8000))
+
  ```
  
 
